@@ -1,0 +1,14 @@
+# Complete framework/database after the team decision. Never store secrets here.
+team_nickname: wandering-shape
+ab_test_path: /341e00b
+framework: django
+database: postgres
+members:
+  - nickname: TODO
+    github: cookie-monster15
+  - nickname: TODO
+    github: rebecca259
+  - nickname: TODO
+    github: vsleifer
+  - nickname: TODO
+    github: marcone-correria
