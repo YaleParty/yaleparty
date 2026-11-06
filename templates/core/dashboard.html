@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard · Grad School Party{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+  <p class="eyebrow">Your party starts here</p>
+  <h1>Welcome, {{ user.username }}.</h1>
+  <p class="intro">You’re signed in to Grad School Party. More of campus life is coming soon.</p>
+  <div class="dashboard-rule"></div>
+  <p class="status-label">SPRINT 1</p>
+  <p class="status-copy">Your account is ready.</p>
+</section>
+{% endblock %}

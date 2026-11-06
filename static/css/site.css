@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #102b3f;
+  --paper: #f5f7f4;
+  --surface: #ffffff;
+  --muted: #587080;
+  --line: #d7e0dd;
+  --accent: #c84431;
+  --accent-dark: #9e3024;
+  --highlight: #b7d96b;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgb(16 43 63 / 3%) calc(100% - 1px)) 0 0 / 72px 72px,
+    var(--paper);
+}
+
+a {
+  color: var(--accent-dark);
+  text-underline-offset: 3px;
+}
+
+.topbar {
+  min-height: 72px;
+  padding: 0 clamp(20px, 6vw, 84px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.wordmark {
+  color: var(--surface);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.wordmark span {
+  color: var(--highlight);
+}
+
+.account-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.account-name {
+  font-size: 14px;
+  color: #d8e2e7;
+}
+
+.account-actions form {
+  margin: 0;
+}
+
+.text-button {
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: var(--highlight);
+  font: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-button:hover,
+.text-button:focus-visible {
+  color: var(--surface);
+}
+
+.page-shell {
+  width: min(100% - 40px, 1000px);
+  margin: 0 auto;
+  flex: 1;
+  display: grid;
+  align-items: center;
+}
+
+.dashboard {
+  max-width: 700px;
+  padding: 80px 0 92px;
+  animation: arrive 420ms ease-out both;
+}
+
+.eyebrow,
+.status-label {
+  margin: 0 0 16px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.intro {
+  max-width: 510px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.dashboard-rule {
+  width: min(100%, 560px);
+  height: 1px;
+  margin: 42px 0 22px;
+  background: var(--line);
+}
+
+.status-label {
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.status-copy {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+}
+
+.auth-panel {
+  width: min(100%, 470px);
+  justify-self: center;
+  margin: 56px 0;
+  padding: clamp(26px, 6vw, 44px);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  background: var(--surface);
+  animation: arrive 420ms ease-out both;
+}
+
+.auth-panel h1 {
+  font-size: 38px;
+}
+
+.auth-form {
+  margin-top: 28px;
+}
+
+.auth-form p {
+  margin: 0 0 18px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.auth-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #aebec4;
+  border-radius: 3px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.auth-form input:focus {
+  border-color: var(--accent-dark);
+  outline: 2px solid rgb(200 68 49 / 18%);
+  outline-offset: 1px;
+}
+
+.auth-form ul {
+  padding-left: 20px;
+  color: var(--accent-dark);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.primary-button {
+  min-height: 46px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--accent);
+  color: var(--surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  background: var(--accent-dark);
+}
+
+.form-footnote {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-footer {
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 540px) {
+  .topbar {
+    min-height: 64px;
+    padding-inline: 18px;
+  }
+
+  .account-actions {
+    gap: 12px;
+  }
+
+  .account-name {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .page-shell {
+    width: min(100% - 32px, 1000px);
+  }
+
+  .dashboard {
+    padding-block: 58px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

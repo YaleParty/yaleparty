@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Sign up · Grad School Party{% endblock %}
+
+{% block content %}
+<section class="auth-panel">
+  <p class="eyebrow">Make yourself at home</p>
+  <h1>Create an account</h1>
+  <form method="post" class="auth-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="primary-button" type="submit">Sign up</button>
+  </form>
+  <p class="form-footnote">Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+</section>
+{% endblock %}
